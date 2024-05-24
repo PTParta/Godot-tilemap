@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://bfpjkgevb7vdr"]
+
+[ext_resource type="Script" path="res://TileMap.gd" id="1_qvc68"]
+
+[sub_resource type="TileSet" id="TileSet_0g2dd"]
+physics_layer_0/collision_layer = 1
+
+[node name="Node2D" type="Node2D"]
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = SubResource("TileSet_0g2dd")
+collision_animatable = true
+format = 2
+script = ExtResource("1_qvc68")

@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=3 uid="uid://bfpjkgevb7vdr"]
+
+[ext_resource type="Texture2D" uid="uid://ctntubpfcjrgl" path="res://icon.svg" id="1_3puu0"]
+[ext_resource type="Script" path="res://TileMap.gd" id="1_qvc68"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_aj7mp"]
+texture = ExtResource("1_3puu0")
+0:0/size_in_atlas = Vector2i(8, 8)
+0:0/next_alternative_id = 2
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+0:0/1 = 1
+0:0/1/flip_v = true
+0:0/1/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/1/physics_layer_0/angular_velocity = 0.0
+
+[sub_resource type="TileSet" id="TileSet_0g2dd"]
+tile_size = Vector2i(128, 128)
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_aj7mp")
+
+[node name="Node2D" type="Node2D"]
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = SubResource("TileSet_0g2dd")
+collision_animatable = true
+format = 2
+layer_1/tile_data = PackedInt32Array()
+script = ExtResource("1_qvc68")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+enabled = false
